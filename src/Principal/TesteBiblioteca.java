@@ -21,7 +21,7 @@ public class TesteBiblioteca {
         Book livro1 = new Book("Português", 978853650L, (short) 350, "Engenharia de Software", (short) 2026, (byte) 1, autoresLivro);
         biblioteca.addPublication(livro1);
 
-        // Instanciando dependências e adicionando um Artigo
+        // Instanciando adicionando um Artigo
         Publisher editora = new Publisher("Tech Publish", "Brasil");
         Journal revista = new Journal(editora, "Revista de Engenharia de Software", (byte) 5);
 
@@ -33,7 +33,7 @@ public class TesteBiblioteca {
         Article artigo1 = new Article(revista, 12345678L, (byte) 2, (short) 10, (short) 25, palavrasChave, "Fundamentos de Programação Orientada a Objetos", (short) 2026, (byte) 3, autoresArtigo);
         biblioteca.addPublication(artigo1);
 
-        // Exibindo os resultados no console para simular o sistema rodando
+        // Exibindo os resultados
         System.out.println("=== SISTEMA DA " + biblioteca.getName().toUpperCase() + " ===");
         System.out.println("Descrição: " + biblioteca.getDescription());
         System.out.println("Total de publicações no acervo: " + biblioteca.countPublications());
@@ -45,7 +45,7 @@ public class TesteBiblioteca {
             System.out.println("- Título: " + p.getTitle() + " | Ano: " + p.getYear());
             System.out.println("  Autor Principal: " + p.getAuthors().get(0).getName());
             
-            // Verificando o tipo da publicação em tempo de execução
+            // Verificando o tipo da publicação
             if (p instanceof Book) {
                 Book b = (Book) p;
                 System.out.println("  Tipo: Livro | ISBN: " + b.getIsbn() + " | Idioma: " + b.getLenguage());
@@ -56,7 +56,7 @@ public class TesteBiblioteca {
             System.out.println();
         }
         
-        // Testando os métodos de busca que você criou
+        // Testando os métodos de busca
         System.out.println("--- Teste de Busca ---");
         String busca = "Engenharia de Software";
         if (biblioteca.hasPublication(busca)) {
